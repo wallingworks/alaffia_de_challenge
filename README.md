@@ -16,3 +16,6 @@ the container is running.  Credentials are available in .env
 ## Notes/Bugs
 
 Timings reported by app sometimes exceed 400ms, but coin-spewer does not report failure in those cases.
+
+Using ratelimit for throttling external api calls.  Unclear how to make ratelimit cache aware, such that request cache hits
+do not count towards the rate limit.

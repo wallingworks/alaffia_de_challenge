@@ -23,7 +23,7 @@ def getconn():
     c = psycopg2.connect(user=os.environ['DB_USER'], host=os.environ['DB_HOST'], password=os.environ['DB_PASSWORD'], dbname='coins')
     return c
 
-mypool = pool.QueuePool(getconn, max_overflow=-1, pool_size=25)
+mypool = pool.QueuePool(getconn, max_overflow=10, pool_size=25)
 
 app = Flask(__name__)
 app.secret_key = "dev"
@@ -60,7 +60,7 @@ def after_request(response):
     app.logger.info((f"Time used: {time.time() - g.start_time}"))
     return response
 
-@on_exception(expo, RateLimitException, max_tries=8)
+#@on_exception(expo, RateLimitException, max_tries=8)
 @limits(calls=50, period=60)
 def get_exchanges(id):
     """
