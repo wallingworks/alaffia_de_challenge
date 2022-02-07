@@ -10,7 +10,8 @@ import time
 from flask import Flask, request, g, jsonify
 from redis import Redis
 import urllib, json
-from ratelimit import limits, sleep_and_retry
+from ratelimit import limits, RateLimitException
+from backoff import on_exception, expo
 import logging
 import requests
 import requests_cache
@@ -44,23 +45,22 @@ def get_db():
         g.conn_db = mypool.connect()
     return g.conn_db
 
+@app.teardown_appcontext
+def close_connection(exception):
+    if hasattr(g, 'conn_db'):
+        g.conn_db.close()
+        
 @app.before_request
 def before_request():
     g.start_time = time.time()
 
 @app.after_request
 def after_request(response):
-    print(f"Time used: {time.time() - g.start_time}", flush=True)
+    print(f"Time used: {time.time() - g.start_time}", flush=True) #  Output to console immediately
     app.logger.info((f"Time used: {time.time() - g.start_time}"))
-    get_db().close()
     return response
-     
-@app.teardown_appcontext
-def close_connection(exception):
-    if hasattr(g, 'conn_db'):
-        g.conn_db.close()
 
-@sleep_and_retry
+@on_exception(expo, RateLimitException, max_tries=8)
 @limits(calls=50, period=60)
 def get_exchanges(id):
     """
