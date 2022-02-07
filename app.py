@@ -8,27 +8,28 @@ import os
 from os.path import exists
 import time
 from flask import Flask, request, g, jsonify
-from flask_caching import Cache 
 import sqlite3
 from redis import Redis
 import urllib, json
 from ratelimit import limits, sleep_and_retry
-
+import logging
 import requests
 import requests_cache
 
 app = Flask(__name__)
 app.secret_key = "dev"
 
-app.config.from_object('config.BaseConfig')  # Set the configuration variables to the flask application
-cache = Cache(app)  # Initialize Cache
+logging.basicConfig(filename='etl.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
+# Use request caching to avoid repeat calls to external API
 backend = requests_cache.RedisCache(host='redis', port=6379)
 requests_cache.install_cache('coin_gecko_cache', backend=backend, expire_after=180)
 
+# Use redis to provide a global task counter (i.e. task_run)
 redis = Redis(host='redis', port=6379)
 
 DATABASE = '/code/sqlite.db'
+
 
 @app.before_request
 def before_request():
@@ -36,7 +37,8 @@ def before_request():
 
 @app.after_request
 def after_request(response):
-    print((f"Time used: {time.time() - g.start_time}"), flush=True)
+    print(f"Time used: {time.time() - g.start_time}", flush=True)
+    app.logger.info((f"Time used: {time.time() - g.start_time}"))
     return response
     
 def get_db():   
@@ -71,7 +73,6 @@ def close_connection(exception):
 
 @sleep_and_retry
 @limits(calls=50, period=60)
-@cache.cached(timeout=30, query_string=True)
 def get_exchanges(id):
     """
     Call CoinGecko API endpoint and extract unique tickers[].market.identifier values
@@ -79,7 +80,7 @@ def get_exchanges(id):
     url = "https://api.coingecko.com/api/v3/coins/%s/tickers" % id
     data = requests.get(url).json()
     # If pulling from Redis cache, requests.exceptions aren't thrown
-    # Manually check for errors
+    # Manually check for cached error response
     if 'error' in data.keys():
         return None 
     return(data)
@@ -101,6 +102,7 @@ def coin_id_transform():
     elif (request.content_type.startswith('text/csv')):
         data = request.data
         ids = data.decode().split('\n')[1:] # Skip header
+        ids = [i for i in ids if i] # Remove any blank lines
     else:
         return('Invalid Content-Type', 400)
     
@@ -118,38 +120,27 @@ def coin_id_transform():
                 return(str(e), 424) # 424 = Failed Dependency
         except requests.exceptions.ConnectionError :
             return('Cannot reach CoinGecko', 424) # 424 = Failed Dependency
-        except requests.exceptions.RequestException as e:
-            print('id = ' + id + 'Exception = ' + str(e), flush=True)
+        except Exception as e:
+            app.logger.error("Unhandled exception" + str(e))
             return('Unhandled exception', 500)
         
         # Check if entry exists
         row = query_db("select id, exchanges from coins where id=?", [id], one=True)
-        #print(row, flush=True)
-        str_exchanges = json.dumps(exchanges)
+        
+        # Store sorted list as string for quick comparison
         exchanges.sort()
-        #print(exchanges, flush=True)
+        str_exchanges = json.dumps(exchanges)
+        
         if not row:
-            print("Inserting id = " + id, flush=True)
+            app.logger.info("Inserting id = " + id)
             alter_db("insert into coins (id, exchanges, task_run) values ('%s', '%s', %s)" % (id, str_exchanges, task_run))
         else:
             # If the exchanges in db doesn't match, update it
             if not row[1]==str_exchanges:
-                print('Updating id = ' + id, flush=True)
+                app.logger.info('Updating id = ' + id)
                 alter_db("update coins set exchanges='%s' where id = '%s'" % (str_exchanges, id))
                    
     return('', 200)
-
-@app.route('/get_coins', methods=['GET'])
-def get_coins():
-    """
-    Display contents of current coins table
-    """
-    data =  query_db("select * from coins")
-    rowarray_list = []
-    for row in data:
-        d = dict(zip(row.keys(), row))   # a dict with column names as keys
-        rowarray_list.append(d)
-    return jsonify(rowarray_list)
 
 if __name__ == "__main__":
 

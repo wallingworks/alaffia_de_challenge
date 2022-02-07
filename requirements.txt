@@ -1,5 +1,4 @@
 flask
-flask_caching
 requests-cache
 redis
 ratelimit
