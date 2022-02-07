@@ -8,13 +8,21 @@ import os
 from os.path import exists
 import time
 from flask import Flask, request, g, jsonify
-import sqlite3
 from redis import Redis
 import urllib, json
 from ratelimit import limits, sleep_and_retry
 import logging
 import requests
 import requests_cache
+
+import sqlalchemy.pool as pool
+import psycopg2
+
+def getconn():
+    c = psycopg2.connect(user=os.environ['DB_USER'], host=os.environ['DB_HOST'], password=os.environ['DB_PASSWORD'], dbname='coins')
+    return c
+
+mypool = pool.QueuePool(getconn, max_overflow=-1, pool_size=25)
 
 app = Flask(__name__)
 app.secret_key = "dev"
@@ -28,8 +36,13 @@ requests_cache.install_cache('coin_gecko_cache', backend=backend, expire_after=1
 # Use redis to provide a global task counter (i.e. task_run)
 redis = Redis(host='redis', port=6379)
 
-DATABASE = '/code/sqlite.db'
-
+def get_db():
+    """Opens a new database connection if there is none yet for the
+    current application context.
+    """
+    if not hasattr(g, 'conn_db'):
+        g.conn_db = mypool.connect()
+    return g.conn_db
 
 @app.before_request
 def before_request():
@@ -39,37 +52,13 @@ def before_request():
 def after_request(response):
     print(f"Time used: {time.time() - g.start_time}", flush=True)
     app.logger.info((f"Time used: {time.time() - g.start_time}"))
+    get_db().close()
     return response
-    
-def get_db():   
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = sqlite3.connect(DATABASE)
-        
-    return db
-
-def alter_db(query):
-    con =  get_db()
-    cur = con.execute(query)
-    con.commit()
-    cur.close()
-    
-def query_db(query, args=(), one=False):
-    """
-    Example Usage:
-    user = query_db('select * from users where username = ?',
-                [the_username], one=True)
-    """
-    cur = get_db().execute(query, args)
-    rv = cur.fetchall()
-    cur.close()
-    return (rv[0] if rv else None) if one else rv
-        
+     
 @app.teardown_appcontext
 def close_connection(exception):
-    db = getattr(g, '_database', None)
-    if db is not None:
-        db.close()
+    if hasattr(g, 'conn_db'):
+        g.conn_db.close()
 
 @sleep_and_retry
 @limits(calls=50, period=60)
@@ -84,12 +73,6 @@ def get_exchanges(id):
     if 'error' in data.keys():
         return None 
     return(data)
-
-def validate_csv(data):
-    return(True)
-
-def validate_json(data):
-    return(True)
       
 @app.route('/coin_id_transform', methods=['POST'])
 def coin_id_transform():
@@ -106,9 +89,10 @@ def coin_id_transform():
     else:
         return('Invalid Content-Type', 400)
     
+    result = []
     for id in ids:
         try:
-            data = get_exchanges(id)
+            data = get_exchanges(id) #Either returns dict, None or raises Exception to be caught here
             if data:
                 exchanges = list(set([x['market']['identifier'] for x in data['tickers']]))
             else:
@@ -125,22 +109,26 @@ def coin_id_transform():
             return('Unhandled exception', 500)
         
         # Check if entry exists
-        row = query_db("select id, exchanges from coins where id=?", [id], one=True)
-        
+        row =  get_db().cursor().execute("select id, exchanges from coins where id='%s'" % id)
         # Store sorted list as string for quick comparison
         exchanges.sort()
-        str_exchanges = json.dumps(exchanges)
-        
+        str_exchanges = json.dumps(exchanges).replace("[", "{").replace("]", "}") # Format for postgres text column insert
+        #row = row.first()
         if not row:
             app.logger.info("Inserting id = " + id)
-            alter_db("insert into coins (id, exchanges, task_run) values ('%s', '%s', %s)" % (id, str_exchanges, task_run))
+            get_db().cursor().execute("insert into coins (id, exchanges, task_run) values ('%s', '%s', %s)" % (id, str_exchanges, task_run))
+            get_db().commit()
+            result.append({"id": id, "exchanges": exchanges, "task_run": task_run})
         else:
             # If the exchanges in db doesn't match, update it
-            if not row[1]==str_exchanges:
+            db_exchanges = row[1]
+            if not set(db_exchanges)==set(exchanges):
                 app.logger.info('Updating id = ' + id)
-                alter_db("update coins set exchanges='%s' where id = '%s'" % (str_exchanges, id))
-                   
-    return('', 200)
+                get_db().cursor().execute("update coins set exchanges='%s' where id = '%s'" % (str_exchanges, id))
+                get_db().commit()
+            result.append({"id": id, "exchanges": exchanges, "task_run": row[2]})
+            
+    return(json.dumps(result), 200)
 
 if __name__ == "__main__":
 

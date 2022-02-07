@@ -10,3 +10,13 @@ services:
         
     redis:
         image: redis
+    postgres:
+        image: postgres
+        ports:
+            - "5432:5432"
+        environment:
+          - POSTGRES_USER=user
+          - POSTGRES_PASSWORD=securePassword
+          - POSTGRES_DB=coins
+        volumes:
+            - ./schema.sql:/docker-entrypoint-initdb.d/10-schema.sql
