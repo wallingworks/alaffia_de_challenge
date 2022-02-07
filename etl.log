@@ -1069,3 +1069,448 @@
 2022-02-07 18:37:33,539 DEBUG requests_cache.session Thread-37 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/formation-fi/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
 2022-02-07 18:37:33,605 DEBUG urllib3.connectionpool Thread-38 : https://api.coingecko.com:443 "GET /api/v3/coins/formation-fi/tickers HTTP/1.1" 200 None
 2022-02-07 18:37:33,606 DEBUG requests_cache.session Thread-38 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/formation-fi/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:32,659 DEBUG requests_cache.backends Thread-177 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,661 DEBUG requests_cache.backends Thread-110 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,663 DEBUG requests_cache.cache_control Thread-177 : Cache directives from request headers: {}
+2022-02-07 18:38:32,664 DEBUG requests_cache.backends Thread-181 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,664 DEBUG requests_cache.backends Thread-281 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,665 DEBUG requests_cache.cache_control Thread-110 : Cache directives from request headers: {}
+2022-02-07 18:38:32,666 DEBUG requests_cache.backends Thread-52 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,666 DEBUG requests_cache.backends Thread-180 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,666 DEBUG requests_cache.backends Thread-62 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,668 DEBUG requests_cache.backends Thread-86 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,669 DEBUG requests_cache.backends Thread-200 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,669 DEBUG requests_cache.backends Thread-91 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,669 DEBUG requests_cache.backends Thread-137 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,669 DEBUG requests_cache.backends Thread-123 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,669 DEBUG requests_cache.backends Thread-109 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,670 DEBUG requests_cache.backends Thread-135 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,670 DEBUG requests_cache.backends Thread-33 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,670 DEBUG requests_cache.backends Thread-283 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,670 DEBUG requests_cache.backends Thread-166 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,671 DEBUG requests_cache.backends Thread-28 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,671 DEBUG requests_cache.backends Thread-40 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,671 DEBUG requests_cache.backends Thread-199 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,672 DEBUG requests_cache.cache_control Thread-181 : Cache directives from request headers: {}
+2022-02-07 18:38:32,672 DEBUG requests_cache.backends Thread-80 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,673 DEBUG requests_cache.backends Thread-25 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,674 DEBUG requests_cache.cache_control Thread-281 : Cache directives from request headers: {}
+2022-02-07 18:38:32,674 DEBUG requests_cache.backends Thread-55 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,675 DEBUG requests_cache.backends Thread-229 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,675 DEBUG requests_cache.backends Thread-221 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,677 DEBUG requests_cache.cache_control Thread-52 : Cache directives from request headers: {}
+2022-02-07 18:38:32,678 DEBUG requests_cache.cache_control Thread-180 : Cache directives from request headers: {}
+2022-02-07 18:38:32,680 DEBUG requests_cache.cache_control Thread-62 : Cache directives from request headers: {}
+2022-02-07 18:38:32,681 DEBUG requests_cache.backends Thread-110 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,682 DEBUG requests_cache.cache_control Thread-86 : Cache directives from request headers: {}
+2022-02-07 18:38:32,682 DEBUG requests_cache.backends Thread-177 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,683 DEBUG requests_cache.cache_control Thread-200 : Cache directives from request headers: {}
+2022-02-07 18:38:32,684 DEBUG requests_cache.cache_control Thread-91 : Cache directives from request headers: {}
+2022-02-07 18:38:32,685 DEBUG requests_cache.cache_control Thread-137 : Cache directives from request headers: {}
+2022-02-07 18:38:32,686 DEBUG requests_cache.cache_control Thread-123 : Cache directives from request headers: {}
+2022-02-07 18:38:32,687 DEBUG requests_cache.cache_control Thread-109 : Cache directives from request headers: {}
+2022-02-07 18:38:32,688 DEBUG requests_cache.cache_control Thread-135 : Cache directives from request headers: {}
+2022-02-07 18:38:32,689 DEBUG requests_cache.cache_control Thread-33 : Cache directives from request headers: {}
+2022-02-07 18:38:32,691 DEBUG requests_cache.cache_control Thread-283 : Cache directives from request headers: {}
+2022-02-07 18:38:32,692 DEBUG requests_cache.cache_control Thread-166 : Cache directives from request headers: {}
+2022-02-07 18:38:32,693 DEBUG requests_cache.cache_control Thread-28 : Cache directives from request headers: {}
+2022-02-07 18:38:32,694 DEBUG requests_cache.cache_control Thread-40 : Cache directives from request headers: {}
+2022-02-07 18:38:32,695 DEBUG requests_cache.cache_control Thread-199 : Cache directives from request headers: {}
+2022-02-07 18:38:32,697 DEBUG requests_cache.cache_control Thread-80 : Cache directives from request headers: {}
+2022-02-07 18:38:32,698 DEBUG requests_cache.cache_control Thread-25 : Cache directives from request headers: {}
+2022-02-07 18:38:32,700 DEBUG requests_cache.cache_control Thread-55 : Cache directives from request headers: {}
+2022-02-07 18:38:32,701 DEBUG requests_cache.cache_control Thread-229 : Cache directives from request headers: {}
+2022-02-07 18:38:32,703 DEBUG requests_cache.cache_control Thread-221 : Cache directives from request headers: {}
+2022-02-07 18:38:32,703 DEBUG requests_cache.backends Thread-181 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,717 DEBUG requests_cache.backends Thread-226 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,720 DEBUG requests_cache.backends Thread-281 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,722 DEBUG requests_cache.backends Thread-87 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,722 DEBUG requests_cache.backends Thread-57 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,725 DEBUG requests_cache.backends Thread-173 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,726 DEBUG requests_cache.backends Thread-77 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,726 DEBUG requests_cache.backends Thread-190 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,726 DEBUG requests_cache.backends Thread-212 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,726 DEBUG requests_cache.backends Thread-153 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,727 DEBUG requests_cache.backends Thread-51 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,727 DEBUG requests_cache.backends Thread-195 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,728 DEBUG requests_cache.backends Thread-213 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,728 DEBUG requests_cache.backends Thread-183 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,728 DEBUG requests_cache.backends Thread-17 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,729 DEBUG requests_cache.cache_control Thread-110 : Cache directives from request headers: {}
+2022-02-07 18:38:32,729 DEBUG requests_cache.backends Thread-122 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,730 DEBUG requests_cache.backends Thread-88 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,730 DEBUG requests_cache.backends Thread-67 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,730 DEBUG requests_cache.backends Thread-31 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,730 DEBUG requests_cache.backends Thread-136 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,730 DEBUG requests_cache.backends Thread-85 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,730 DEBUG requests_cache.backends Thread-98 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,731 DEBUG requests_cache.backends Thread-78 : Initializing backend: Total rows: 4 responses, 0 redirects coin_gecko_cache
+2022-02-07 18:38:32,732 DEBUG urllib3.connectionpool Thread-180 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,733 DEBUG requests_cache.cache_control Thread-177 : Cache directives from request headers: {}
+2022-02-07 18:38:32,736 DEBUG urllib3.connectionpool Thread-91 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,741 DEBUG urllib3.connectionpool Thread-109 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,749 DEBUG requests_cache.cache_control Thread-181 : Cache directives from request headers: {}
+2022-02-07 18:38:32,750 DEBUG requests_cache.cache_control Thread-226 : Cache directives from request headers: {}
+2022-02-07 18:38:32,751 DEBUG requests_cache.cache_control Thread-281 : Cache directives from request headers: {}
+2022-02-07 18:38:32,752 DEBUG urllib3.connectionpool Thread-229 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,753 DEBUG requests_cache.cache_control Thread-87 : Cache directives from request headers: {}
+2022-02-07 18:38:32,754 DEBUG requests_cache.cache_control Thread-57 : Cache directives from request headers: {}
+2022-02-07 18:38:32,755 DEBUG requests_cache.cache_control Thread-173 : Cache directives from request headers: {}
+2022-02-07 18:38:32,757 DEBUG requests_cache.cache_control Thread-77 : Cache directives from request headers: {}
+2022-02-07 18:38:32,758 DEBUG requests_cache.cache_control Thread-190 : Cache directives from request headers: {}
+2022-02-07 18:38:32,760 DEBUG requests_cache.cache_control Thread-212 : Cache directives from request headers: {}
+2022-02-07 18:38:32,760 DEBUG requests_cache.cache_control Thread-153 : Cache directives from request headers: {}
+2022-02-07 18:38:32,762 DEBUG requests_cache.cache_control Thread-51 : Cache directives from request headers: {}
+2022-02-07 18:38:32,763 DEBUG requests_cache.cache_control Thread-195 : Cache directives from request headers: {}
+2022-02-07 18:38:32,764 DEBUG requests_cache.cache_control Thread-213 : Cache directives from request headers: {}
+2022-02-07 18:38:32,765 DEBUG requests_cache.cache_control Thread-183 : Cache directives from request headers: {}
+2022-02-07 18:38:32,766 DEBUG requests_cache.cache_control Thread-17 : Cache directives from request headers: {}
+2022-02-07 18:38:32,768 DEBUG requests_cache.cache_control Thread-122 : Cache directives from request headers: {}
+2022-02-07 18:38:32,768 DEBUG urllib3.connectionpool Thread-110 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,770 DEBUG requests_cache.cache_control Thread-88 : Cache directives from request headers: {}
+2022-02-07 18:38:32,771 DEBUG requests_cache.cache_control Thread-67 : Cache directives from request headers: {}
+2022-02-07 18:38:32,772 DEBUG requests_cache.cache_control Thread-31 : Cache directives from request headers: {}
+2022-02-07 18:38:32,773 DEBUG requests_cache.cache_control Thread-136 : Cache directives from request headers: {}
+2022-02-07 18:38:32,774 DEBUG requests_cache.cache_control Thread-85 : Cache directives from request headers: {}
+2022-02-07 18:38:32,775 DEBUG requests_cache.cache_control Thread-98 : Cache directives from request headers: {}
+2022-02-07 18:38:32,776 DEBUG requests_cache.cache_control Thread-78 : Cache directives from request headers: {}
+2022-02-07 18:38:32,779 DEBUG urllib3.connectionpool Thread-177 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,784 DEBUG urllib3.connectionpool Thread-281 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,794 DEBUG urllib3.connectionpool Thread-51 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,801 DEBUG urllib3.connectionpool Thread-122 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,806 DEBUG urllib3.connectionpool Thread-136 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 18:38:32,939 DEBUG urllib3.connectionpool Thread-180 : https://api.coingecko.com:443 "GET /api/v3/coins/f-toaorimfni/tickers HTTP/1.1" 404 None
+2022-02-07 18:38:32,940 DEBUG requests_cache.session Thread-180 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/f-toaorimfni/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:32,940 DEBUG requests_cache.session Thread-180 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/f-toaorimfni/tickers
+2022-02-07 18:38:32,950 DEBUG urllib3.connectionpool Thread-229 : https://api.coingecko.com:443 "GET /api/v3/coins/bsaisbhc/tickers HTTP/1.1" 404 None
+2022-02-07 18:38:32,950 DEBUG urllib3.connectionpool Thread-109 : https://api.coingecko.com:443 "GET /api/v3/coins/ereedtvusn-e/tickers HTTP/1.1" 404 None
+2022-02-07 18:38:32,951 DEBUG requests_cache.session Thread-229 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/bsaisbhc/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:32,952 DEBUG requests_cache.session Thread-229 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/bsaisbhc/tickers
+2022-02-07 18:38:32,952 DEBUG requests_cache.session Thread-109 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/ereedtvusn-e/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:32,954 DEBUG requests_cache.session Thread-109 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/ereedtvusn-e/tickers
+2022-02-07 18:38:32,961 DEBUG urllib3.connectionpool Thread-122 : https://api.coingecko.com:443 "GET /api/v3/coins/dtrvenes-uee/tickers HTTP/1.1" 404 None
+2022-02-07 18:38:32,962 DEBUG requests_cache.session Thread-122 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/dtrvenes-uee/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:32,962 DEBUG requests_cache.session Thread-122 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/dtrvenes-uee/tickers
+2022-02-07 18:38:32,966 DEBUG urllib3.connectionpool Thread-281 : https://api.coingecko.com:443 "GET /api/v3/coins/curium/tickers HTTP/1.1" 404 None
+2022-02-07 18:38:32,967 DEBUG urllib3.connectionpool Thread-51 : https://api.coingecko.com:443 "GET /api/v3/coins/fiaotf-oinrm/tickers HTTP/1.1" 404 None
+2022-02-07 18:38:32,967 DEBUG requests_cache.session Thread-281 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/curium/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:32,968 DEBUG requests_cache.session Thread-51 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/fiaotf-oinrm/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:32,968 DEBUG requests_cache.session Thread-281 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/curium/tickers
+2022-02-07 18:38:32,969 DEBUG requests_cache.session Thread-51 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/fiaotf-oinrm/tickers
+2022-02-07 18:38:32,978 DEBUG urllib3.connectionpool Thread-91 : https://api.coingecko.com:443 "GET /api/v3/coins/moonai/tickers HTTP/1.1" 200 None
+2022-02-07 18:38:32,979 DEBUG requests_cache.session Thread-91 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/moonai/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:32,995 DEBUG urllib3.connectionpool Thread-177 : https://api.coingecko.com:443 "GET /api/v3/coins/moonai/tickers HTTP/1.1" 200 None
+2022-02-07 18:38:32,996 DEBUG requests_cache.session Thread-177 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/moonai/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:33,002 DEBUG urllib3.connectionpool Thread-136 : https://api.coingecko.com:443 "GET /api/v3/coins/moonai/tickers HTTP/1.1" 200 None
+2022-02-07 18:38:33,003 DEBUG requests_cache.session Thread-136 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/moonai/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 18:38:33,048 DEBUG urllib3.connectionpool Thread-110 : https://api.coingecko.com:443 "GET /api/v3/coins/moonai/tickers HTTP/1.1" 200 None
+2022-02-07 18:38:33,049 DEBUG requests_cache.session Thread-110 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/moonai/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:41:07,200 DEBUG requests_cache.backends.base MainThread : Initializing RedisDict with serializer: <requests_cache.serializers.pipeline.SerializerPipeline object at 0x7fb90ee856d0>
+2022-02-07 12:41:07,201 DEBUG requests_cache.backends.base MainThread : Initializing RedisHashDict with serializer: <requests_cache.serializers.pipeline.SerializerPipeline object at 0x7fb90ee856d0>
+2022-02-07 12:41:07,201 DEBUG requests_cache.patcher MainThread : Patching requests.Session with class: _ConfiguredCachedSession
+2022-02-07 12:41:07,212 WARNING werkzeug MainThread :  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-02-07 12:41:07,213 INFO werkzeug MainThread :  * Running on http://172.21.0.3:5000/ (Press CTRL+C to quit)
+2022-02-07 12:41:07,214 INFO werkzeug MainThread :  * Restarting with stat
+2022-02-07 12:41:07,554 DEBUG requests_cache.backends.base MainThread : Initializing RedisDict with serializer: <requests_cache.serializers.pipeline.SerializerPipeline object at 0x7f10fdd38820>
+2022-02-07 12:41:07,555 DEBUG requests_cache.backends.base MainThread : Initializing RedisHashDict with serializer: <requests_cache.serializers.pipeline.SerializerPipeline object at 0x7f10fdd38820>
+2022-02-07 12:41:07,555 DEBUG requests_cache.patcher MainThread : Patching requests.Session with class: _ConfiguredCachedSession
+2022-02-07 12:41:07,564 WARNING werkzeug MainThread :  * Debugger is active!
+2022-02-07 12:41:07,567 INFO werkzeug MainThread :  * Debugger PIN: 855-423-616
+2022-02-07 12:44:18,987 DEBUG requests_cache.backends Thread-2 : Initializing backend: Total rows: 11 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:44:18,991 DEBUG requests_cache.cache_control Thread-2 : Cache directives from request headers: {}
+2022-02-07 12:44:18,993 DEBUG urllib3.connectionpool Thread-2 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:44:19,277 DEBUG urllib3.connectionpool Thread-2 : https://api.coingecko.com:443 "GET /api/v3/coins/bitcoin/tickers HTTP/1.1" 200 None
+2022-02-07 12:44:19,279 DEBUG requests_cache.session Thread-2 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/bitcoin/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:44:19,295 INFO app Thread-2 : Updating id = bitcoin
+2022-02-07 12:44:19,308 INFO app Thread-2 : Time used: 0.3237612247467041
+2022-02-07 12:44:19,311 INFO werkzeug Thread-2 : 172.21.0.1 - - [07/Feb/2022 12:44:19] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:44:25,510 DEBUG requests_cache.backends Thread-3 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:44:25,512 DEBUG requests_cache.cache_control Thread-3 : Cache directives from request headers: {}
+2022-02-07 12:44:25,522 INFO app Thread-3 : Time used: 0.011962652206420898
+2022-02-07 12:44:25,523 INFO werkzeug Thread-3 : 172.21.0.1 - - [07/Feb/2022 12:44:25] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:49:56,341 DEBUG requests_cache.backends Thread-4 : Initializing backend: Total rows: 11 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:56,342 DEBUG requests_cache.cache_control Thread-4 : Cache directives from request headers: {}
+2022-02-07 12:49:56,343 DEBUG urllib3.connectionpool Thread-4 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:56,725 DEBUG urllib3.connectionpool Thread-4 : https://api.coingecko.com:443 "GET /api/v3/coins/axial/tickers HTTP/1.1" 200 None
+2022-02-07 12:49:56,726 DEBUG requests_cache.session Thread-4 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/axial/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:56,732 DEBUG requests_cache.backends Thread-5 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:56,733 DEBUG requests_cache.cache_control Thread-5 : Cache directives from request headers: {}
+2022-02-07 12:49:56,737 INFO app Thread-4 : Inserting id = axial
+2022-02-07 12:49:56,739 INFO app Thread-5 : Inserting id = axial
+2022-02-07 12:49:56,750 DEBUG requests_cache.backends Thread-4 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:56,752 DEBUG requests_cache.cache_control Thread-4 : Cache directives from request headers: {}
+2022-02-07 12:49:56,753 DEBUG urllib3.connectionpool Thread-4 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:56,763 DEBUG requests_cache.backends Thread-5 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:56,764 DEBUG requests_cache.cache_control Thread-5 : Cache directives from request headers: {}
+2022-02-07 12:49:56,765 DEBUG urllib3.connectionpool Thread-5 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:56,911 DEBUG urllib3.connectionpool Thread-4 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:56,912 DEBUG requests_cache.session Thread-4 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:56,912 DEBUG requests_cache.session Thread-4 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:49:56,914 DEBUG requests_cache.backends Thread-4 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:56,915 DEBUG requests_cache.cache_control Thread-4 : Cache directives from request headers: {}
+2022-02-07 12:49:56,916 DEBUG urllib3.connectionpool Thread-4 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:56,998 DEBUG urllib3.connectionpool Thread-5 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:56,999 DEBUG requests_cache.session Thread-5 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:56,999 DEBUG requests_cache.session Thread-5 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:49:57,001 DEBUG requests_cache.backends Thread-5 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,002 DEBUG requests_cache.cache_control Thread-5 : Cache directives from request headers: {}
+2022-02-07 12:49:57,003 DEBUG urllib3.connectionpool Thread-5 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:57,097 DEBUG urllib3.connectionpool Thread-4 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:57,100 DEBUG requests_cache.session Thread-4 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:57,101 DEBUG requests_cache.session Thread-4 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:49:57,105 DEBUG requests_cache.backends Thread-4 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,106 DEBUG requests_cache.cache_control Thread-4 : Cache directives from request headers: {}
+2022-02-07 12:49:57,107 DEBUG urllib3.connectionpool Thread-4 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:57,129 DEBUG requests_cache.backends Thread-6 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,130 DEBUG requests_cache.cache_control Thread-6 : Cache directives from request headers: {}
+2022-02-07 12:49:57,139 DEBUG requests_cache.backends Thread-6 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,140 DEBUG requests_cache.cache_control Thread-6 : Cache directives from request headers: {}
+2022-02-07 12:49:57,141 DEBUG urllib3.connectionpool Thread-6 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:57,227 DEBUG urllib3.connectionpool Thread-5 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:57,227 DEBUG requests_cache.session Thread-5 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:57,228 DEBUG requests_cache.session Thread-5 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:49:57,230 DEBUG requests_cache.backends Thread-5 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,231 DEBUG requests_cache.cache_control Thread-5 : Cache directives from request headers: {}
+2022-02-07 12:49:57,232 DEBUG urllib3.connectionpool Thread-5 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:57,283 DEBUG urllib3.connectionpool Thread-6 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:57,284 DEBUG requests_cache.session Thread-6 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:57,284 DEBUG requests_cache.session Thread-6 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:49:57,287 DEBUG requests_cache.backends Thread-6 : Initializing backend: Total rows: 12 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,288 DEBUG requests_cache.cache_control Thread-6 : Cache directives from request headers: {}
+2022-02-07 12:49:57,289 DEBUG urllib3.connectionpool Thread-6 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:57,304 DEBUG urllib3.connectionpool Thread-4 : https://api.coingecko.com:443 "GET /api/v3/coins/cr-coin/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:57,305 DEBUG requests_cache.session Thread-4 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/cr-coin/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:57,305 DEBUG requests_cache.session Thread-4 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/cr-coin/tickers
+2022-02-07 12:49:57,307 INFO app Thread-4 : Time used: 0.9666399955749512
+2022-02-07 12:49:57,309 INFO werkzeug Thread-4 : 172.21.0.1 - - [07/Feb/2022 12:49:57] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:49:57,426 DEBUG urllib3.connectionpool Thread-5 : https://api.coingecko.com:443 "GET /api/v3/coins/greenpay-coin/tickers HTTP/1.1" 200 None
+2022-02-07 12:49:57,427 DEBUG requests_cache.session Thread-5 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/greenpay-coin/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:57,431 INFO app Thread-5 : Inserting id = greenpay-coin
+2022-02-07 12:49:57,444 INFO app Thread-5 : Time used: 0.7160079479217529
+2022-02-07 12:49:57,446 INFO werkzeug Thread-5 : 172.21.0.1 - - [07/Feb/2022 12:49:57] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:49:57,530 DEBUG requests_cache.backends Thread-7 : Initializing backend: Total rows: 13 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,531 DEBUG requests_cache.cache_control Thread-7 : Cache directives from request headers: {}
+2022-02-07 12:49:57,532 DEBUG urllib3.connectionpool Thread-7 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:57,569 DEBUG urllib3.connectionpool Thread-6 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:57,570 DEBUG requests_cache.session Thread-6 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:57,570 DEBUG requests_cache.session Thread-6 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:49:57,572 DEBUG requests_cache.backends Thread-6 : Initializing backend: Total rows: 13 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,573 DEBUG requests_cache.cache_control Thread-6 : Cache directives from request headers: {}
+2022-02-07 12:49:57,574 DEBUG urllib3.connectionpool Thread-6 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:57,683 DEBUG urllib3.connectionpool Thread-7 : https://api.coingecko.com:443 "GET /api/v3/coins/laiax/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:57,684 DEBUG requests_cache.session Thread-7 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/laiax/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:57,684 DEBUG requests_cache.session Thread-7 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/laiax/tickers
+2022-02-07 12:49:57,686 DEBUG requests_cache.backends Thread-7 : Initializing backend: Total rows: 13 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,687 DEBUG requests_cache.cache_control Thread-7 : Cache directives from request headers: {}
+2022-02-07 12:49:57,688 DEBUG urllib3.connectionpool Thread-7 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:57,760 DEBUG urllib3.connectionpool Thread-6 : https://api.coingecko.com:443 "GET /api/v3/coins/smartlands/tickers HTTP/1.1" 200 None
+2022-02-07 12:49:57,761 DEBUG requests_cache.session Thread-6 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/smartlands/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:57,766 INFO app Thread-6 : Inserting id = smartlands
+2022-02-07 12:49:57,818 INFO app Thread-6 : Time used: 0.6903102397918701
+2022-02-07 12:49:57,823 INFO werkzeug Thread-6 : 172.21.0.1 - - [07/Feb/2022 12:49:57] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:49:57,831 DEBUG urllib3.connectionpool Thread-7 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:57,833 DEBUG requests_cache.session Thread-7 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:57,833 DEBUG requests_cache.session Thread-7 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:49:57,835 DEBUG requests_cache.backends Thread-7 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,836 DEBUG requests_cache.cache_control Thread-7 : Cache directives from request headers: {}
+2022-02-07 12:49:57,837 DEBUG urllib3.connectionpool Thread-7 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:57,931 DEBUG requests_cache.backends Thread-8 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,932 DEBUG requests_cache.cache_control Thread-8 : Cache directives from request headers: {}
+2022-02-07 12:49:57,940 DEBUG requests_cache.backends Thread-8 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:57,940 DEBUG requests_cache.cache_control Thread-8 : Cache directives from request headers: {}
+2022-02-07 12:49:57,941 DEBUG urllib3.connectionpool Thread-8 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:58,016 DEBUG urllib3.connectionpool Thread-7 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:58,016 DEBUG requests_cache.session Thread-7 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:58,017 DEBUG requests_cache.session Thread-7 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:49:58,018 DEBUG requests_cache.backends Thread-7 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:58,020 DEBUG requests_cache.cache_control Thread-7 : Cache directives from request headers: {}
+2022-02-07 12:49:58,021 DEBUG urllib3.connectionpool Thread-7 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:58,159 DEBUG urllib3.connectionpool Thread-7 : https://api.coingecko.com:443 "GET /api/v3/coins/atlantic-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:58,164 DEBUG requests_cache.session Thread-7 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/atlantic-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:58,165 DEBUG requests_cache.session Thread-7 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/atlantic-finance/tickers
+2022-02-07 12:49:58,167 INFO app Thread-7 : Time used: 0.6386582851409912
+2022-02-07 12:49:58,168 INFO werkzeug Thread-7 : 172.21.0.1 - - [07/Feb/2022 12:49:58] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:49:58,195 DEBUG urllib3.connectionpool Thread-8 : https://api.coingecko.com:443 "GET /api/v3/coins/icsa-enfnss/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:58,196 DEBUG requests_cache.session Thread-8 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/icsa-enfnss/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:58,196 DEBUG requests_cache.session Thread-8 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/icsa-enfnss/tickers
+2022-02-07 12:49:58,199 DEBUG requests_cache.backends Thread-8 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:58,200 DEBUG requests_cache.cache_control Thread-8 : Cache directives from request headers: {}
+2022-02-07 12:49:58,201 DEBUG urllib3.connectionpool Thread-8 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:58,341 DEBUG urllib3.connectionpool Thread-8 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:58,346 DEBUG requests_cache.session Thread-8 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:58,348 DEBUG requests_cache.session Thread-8 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:49:58,348 DEBUG requests_cache.backends Thread-9 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:58,356 DEBUG requests_cache.cache_control Thread-9 : Cache directives from request headers: {}
+2022-02-07 12:49:58,357 DEBUG requests_cache.backends Thread-8 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:58,359 DEBUG requests_cache.cache_control Thread-8 : Cache directives from request headers: {}
+2022-02-07 12:49:58,362 DEBUG urllib3.connectionpool Thread-8 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:58,370 DEBUG requests_cache.backends Thread-9 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:58,371 DEBUG requests_cache.cache_control Thread-9 : Cache directives from request headers: {}
+2022-02-07 12:49:58,372 DEBUG urllib3.connectionpool Thread-9 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:58,594 DEBUG urllib3.connectionpool Thread-8 : https://api.coingecko.com:443 "GET /api/v3/coins/money-printer-go-brrr-set/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:58,595 DEBUG requests_cache.session Thread-8 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/money-printer-go-brrr-set/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:58,596 DEBUG requests_cache.session Thread-8 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/money-printer-go-brrr-set/tickers
+2022-02-07 12:49:58,597 INFO app Thread-8 : Time used: 0.6671285629272461
+2022-02-07 12:49:58,599 INFO werkzeug Thread-8 : 172.21.0.1 - - [07/Feb/2022 12:49:58] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:49:58,688 DEBUG urllib3.connectionpool Thread-9 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:58,691 DEBUG requests_cache.session Thread-9 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:58,692 DEBUG requests_cache.session Thread-9 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:49:58,695 DEBUG requests_cache.backends Thread-9 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:58,696 DEBUG requests_cache.cache_control Thread-9 : Cache directives from request headers: {}
+2022-02-07 12:49:58,697 DEBUG urllib3.connectionpool Thread-9 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:58,733 DEBUG requests_cache.backends Thread-10 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:58,735 DEBUG requests_cache.cache_control Thread-10 : Cache directives from request headers: {}
+2022-02-07 12:49:58,736 DEBUG urllib3.connectionpool Thread-10 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:58,839 DEBUG urllib3.connectionpool Thread-9 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:58,840 DEBUG requests_cache.session Thread-9 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:58,840 DEBUG requests_cache.session Thread-9 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:49:58,842 DEBUG requests_cache.backends Thread-9 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:58,843 DEBUG requests_cache.cache_control Thread-9 : Cache directives from request headers: {}
+2022-02-07 12:49:58,844 DEBUG urllib3.connectionpool Thread-9 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:58,888 DEBUG urllib3.connectionpool Thread-10 : https://api.coingecko.com:443 "GET /api/v3/coins/axlia/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:58,888 DEBUG requests_cache.session Thread-10 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/axlia/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:58,889 DEBUG requests_cache.session Thread-10 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/axlia/tickers
+2022-02-07 12:49:58,891 DEBUG requests_cache.backends Thread-10 : Initializing backend: Total rows: 14 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:58,892 DEBUG requests_cache.cache_control Thread-10 : Cache directives from request headers: {}
+2022-02-07 12:49:58,893 DEBUG urllib3.connectionpool Thread-10 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,031 DEBUG urllib3.connectionpool Thread-9 : https://api.coingecko.com:443 "GET /api/v3/coins/policedoge/tickers HTTP/1.1" 200 None
+2022-02-07 12:49:59,032 DEBUG requests_cache.session Thread-9 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/policedoge/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:59,036 INFO app Thread-9 : Inserting id = policedoge
+2022-02-07 12:49:59,054 INFO app Thread-9 : Time used: 0.7149748802185059
+2022-02-07 12:49:59,057 INFO werkzeug Thread-9 : 172.21.0.1 - - [07/Feb/2022 12:49:59] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:49:59,135 DEBUG requests_cache.backends Thread-11 : Initializing backend: Total rows: 15 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,137 DEBUG requests_cache.cache_control Thread-11 : Cache directives from request headers: {}
+2022-02-07 12:49:59,146 DEBUG requests_cache.backends Thread-11 : Initializing backend: Total rows: 15 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,147 DEBUG requests_cache.cache_control Thread-11 : Cache directives from request headers: {}
+2022-02-07 12:49:59,147 DEBUG urllib3.connectionpool Thread-11 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,202 DEBUG urllib3.connectionpool Thread-10 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:59,203 DEBUG requests_cache.session Thread-10 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:59,204 DEBUG requests_cache.session Thread-10 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:49:59,206 DEBUG requests_cache.backends Thread-10 : Initializing backend: Total rows: 15 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,208 DEBUG requests_cache.cache_control Thread-10 : Cache directives from request headers: {}
+2022-02-07 12:49:59,209 DEBUG urllib3.connectionpool Thread-10 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,307 DEBUG urllib3.connectionpool Thread-11 : https://api.coingecko.com:443 "GET /api/v3/coins/sescns-naif/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:59,310 DEBUG requests_cache.session Thread-11 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sescns-naif/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:59,311 DEBUG requests_cache.session Thread-11 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sescns-naif/tickers
+2022-02-07 12:49:59,313 DEBUG requests_cache.backends Thread-11 : Initializing backend: Total rows: 15 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,314 DEBUG requests_cache.cache_control Thread-11 : Cache directives from request headers: {}
+2022-02-07 12:49:59,315 DEBUG urllib3.connectionpool Thread-11 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,356 DEBUG urllib3.connectionpool Thread-10 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:59,357 DEBUG requests_cache.session Thread-10 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:59,357 DEBUG requests_cache.session Thread-10 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:49:59,359 DEBUG requests_cache.backends Thread-10 : Initializing backend: Total rows: 15 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,360 DEBUG requests_cache.cache_control Thread-10 : Cache directives from request headers: {}
+2022-02-07 12:49:59,361 DEBUG urllib3.connectionpool Thread-10 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,541 DEBUG urllib3.connectionpool Thread-10 : https://api.coingecko.com:443 "GET /api/v3/coins/pcatv3/tickers HTTP/1.1" 200 None
+2022-02-07 12:49:59,542 DEBUG requests_cache.session Thread-10 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/pcatv3/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:59,544 DEBUG requests_cache.backends Thread-12 : Initializing backend: Total rows: 16 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,545 DEBUG requests_cache.cache_control Thread-12 : Cache directives from request headers: {}
+2022-02-07 12:49:59,550 INFO app Thread-10 : Inserting id = pcatv3
+2022-02-07 12:49:59,551 DEBUG requests_cache.backends Thread-12 : Initializing backend: Total rows: 16 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,552 DEBUG requests_cache.cache_control Thread-12 : Cache directives from request headers: {}
+2022-02-07 12:49:59,553 DEBUG urllib3.connectionpool Thread-12 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,553 DEBUG urllib3.connectionpool Thread-11 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:59,554 DEBUG requests_cache.session Thread-11 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:59,554 DEBUG requests_cache.session Thread-11 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:49:59,556 DEBUG requests_cache.backends Thread-11 : Initializing backend: Total rows: 16 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,557 DEBUG requests_cache.cache_control Thread-11 : Cache directives from request headers: {}
+2022-02-07 12:49:59,558 DEBUG urllib3.connectionpool Thread-11 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,562 INFO app Thread-10 : Time used: 0.8294556140899658
+2022-02-07 12:49:59,563 INFO werkzeug Thread-10 : 172.21.0.1 - - [07/Feb/2022 12:49:59] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:49:59,688 DEBUG urllib3.connectionpool Thread-12 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:59,688 DEBUG requests_cache.session Thread-12 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:59,689 DEBUG requests_cache.session Thread-12 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:49:59,690 DEBUG requests_cache.backends Thread-12 : Initializing backend: Total rows: 16 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,692 DEBUG requests_cache.cache_control Thread-12 : Cache directives from request headers: {}
+2022-02-07 12:49:59,692 DEBUG urllib3.connectionpool Thread-12 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,855 DEBUG urllib3.connectionpool Thread-12 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:49:59,856 DEBUG requests_cache.session Thread-12 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:59,857 DEBUG requests_cache.session Thread-12 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:49:59,858 DEBUG requests_cache.backends Thread-12 : Initializing backend: Total rows: 16 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,860 DEBUG requests_cache.cache_control Thread-12 : Cache directives from request headers: {}
+2022-02-07 12:49:59,861 DEBUG urllib3.connectionpool Thread-12 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,938 DEBUG requests_cache.backends Thread-13 : Initializing backend: Total rows: 16 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,940 DEBUG requests_cache.cache_control Thread-13 : Cache directives from request headers: {}
+2022-02-07 12:49:59,946 DEBUG urllib3.connectionpool Thread-11 : https://api.coingecko.com:443 "GET /api/v3/coins/hecofi/tickers HTTP/1.1" 200 None
+2022-02-07 12:49:59,947 DEBUG requests_cache.session Thread-11 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/hecofi/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:49:59,947 DEBUG requests_cache.backends Thread-13 : Initializing backend: Total rows: 16 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:49:59,949 DEBUG requests_cache.cache_control Thread-13 : Cache directives from request headers: {}
+2022-02-07 12:49:59,951 DEBUG urllib3.connectionpool Thread-13 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:49:59,951 INFO app Thread-11 : Inserting id = hecofi
+2022-02-07 12:50:00,003 INFO app Thread-11 : Time used: 0.8688979148864746
+2022-02-07 12:50:00,006 INFO werkzeug Thread-11 : 172.21.0.1 - - [07/Feb/2022 12:50:00] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:50:00,180 DEBUG urllib3.connectionpool Thread-13 : https://api.coingecko.com:443 "GET /api/v3/coins/ancs-nseifs/tickers HTTP/1.1" 404 None
+2022-02-07 12:50:00,184 DEBUG requests_cache.session Thread-13 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/ancs-nseifs/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:00,185 DEBUG requests_cache.session Thread-13 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/ancs-nseifs/tickers
+2022-02-07 12:50:00,193 DEBUG requests_cache.backends Thread-13 : Initializing backend: Total rows: 17 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:00,197 DEBUG requests_cache.cache_control Thread-13 : Cache directives from request headers: {}
+2022-02-07 12:50:00,198 DEBUG urllib3.connectionpool Thread-13 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:50:00,347 DEBUG requests_cache.backends Thread-14 : Initializing backend: Total rows: 17 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:00,348 DEBUG requests_cache.cache_control Thread-14 : Cache directives from request headers: {}
+2022-02-07 12:50:00,353 DEBUG urllib3.connectionpool Thread-13 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:50:00,353 DEBUG requests_cache.session Thread-13 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:00,353 DEBUG requests_cache.session Thread-13 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:50:00,356 DEBUG requests_cache.backends Thread-13 : Initializing backend: Total rows: 17 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:00,357 DEBUG requests_cache.cache_control Thread-13 : Cache directives from request headers: {}
+2022-02-07 12:50:00,357 DEBUG requests_cache.backends Thread-14 : Initializing backend: Total rows: 17 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:00,358 DEBUG requests_cache.cache_control Thread-14 : Cache directives from request headers: {}
+2022-02-07 12:50:00,358 DEBUG urllib3.connectionpool Thread-13 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:50:00,359 DEBUG urllib3.connectionpool Thread-14 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:50:00,531 DEBUG urllib3.connectionpool Thread-14 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:50:00,532 DEBUG requests_cache.session Thread-14 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:00,533 DEBUG requests_cache.session Thread-14 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:50:00,534 DEBUG requests_cache.backends Thread-14 : Initializing backend: Total rows: 17 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:00,535 DEBUG requests_cache.cache_control Thread-14 : Cache directives from request headers: {}
+2022-02-07 12:50:00,536 DEBUG urllib3.connectionpool Thread-14 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:50:00,574 DEBUG urllib3.connectionpool Thread-12 : https://api.coingecko.com:443 "GET /api/v3/coins/kuswap/tickers HTTP/1.1" 200 None
+2022-02-07 12:50:00,574 DEBUG requests_cache.session Thread-12 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/kuswap/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:00,579 INFO app Thread-12 : Inserting id = kuswap
+2022-02-07 12:50:00,618 INFO app Thread-12 : Time used: 1.0757882595062256
+2022-02-07 12:50:00,620 INFO werkzeug Thread-12 : 172.21.0.1 - - [07/Feb/2022 12:50:00] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:50:00,709 DEBUG urllib3.connectionpool Thread-14 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:50:00,710 DEBUG requests_cache.session Thread-14 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:00,710 DEBUG requests_cache.session Thread-14 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:50:00,712 DEBUG requests_cache.backends Thread-14 : Initializing backend: Total rows: 18 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:00,713 DEBUG requests_cache.cache_control Thread-14 : Cache directives from request headers: {}
+2022-02-07 12:50:00,714 DEBUG urllib3.connectionpool Thread-14 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:50:00,728 DEBUG urllib3.connectionpool Thread-13 : https://api.coingecko.com:443 "GET /api/v3/coins/graviocoin/tickers HTTP/1.1" 200 None
+2022-02-07 12:50:00,729 DEBUG requests_cache.session Thread-13 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/graviocoin/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:00,733 INFO app Thread-13 : Inserting id = graviocoin
+2022-02-07 12:50:00,738 DEBUG requests_cache.backends Thread-15 : Initializing backend: Total rows: 19 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:00,740 DEBUG requests_cache.cache_control Thread-15 : Cache directives from request headers: {}
+2022-02-07 12:50:00,752 INFO app Thread-13 : Time used: 0.815169095993042
+2022-02-07 12:50:00,754 INFO werkzeug Thread-13 : 172.21.0.1 - - [07/Feb/2022 12:50:00] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:50:00,757 DEBUG requests_cache.backends Thread-15 : Initializing backend: Total rows: 19 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:00,758 DEBUG requests_cache.cache_control Thread-15 : Cache directives from request headers: {}
+2022-02-07 12:50:00,759 DEBUG urllib3.connectionpool Thread-15 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:50:00,895 DEBUG urllib3.connectionpool Thread-15 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:50:00,896 DEBUG requests_cache.session Thread-15 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:00,896 DEBUG requests_cache.session Thread-15 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:50:00,899 DEBUG requests_cache.backends Thread-15 : Initializing backend: Total rows: 19 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:00,900 DEBUG requests_cache.cache_control Thread-15 : Cache directives from request headers: {}
+2022-02-07 12:50:00,902 DEBUG urllib3.connectionpool Thread-15 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:50:01,007 DEBUG urllib3.connectionpool Thread-14 : https://api.coingecko.com:443 "GET /api/v3/coins/eosmacndiyo/tickers HTTP/1.1" 404 None
+2022-02-07 12:50:01,010 DEBUG requests_cache.session Thread-14 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/eosmacndiyo/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:01,011 DEBUG requests_cache.session Thread-14 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/eosmacndiyo/tickers
+2022-02-07 12:50:01,017 INFO app Thread-14 : Time used: 0.6720900535583496
+2022-02-07 12:50:01,024 INFO werkzeug Thread-14 : 172.21.0.1 - - [07/Feb/2022 12:50:01] "POST /coin_id_transform HTTP/1.1" 200 -
+2022-02-07 12:50:01,040 DEBUG urllib3.connectionpool Thread-15 : https://api.coingecko.com:443 "GET /api/v3/coins/varius/tickers HTTP/1.1" 404 None
+2022-02-07 12:50:01,040 DEBUG requests_cache.session Thread-15 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/varius/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:01,041 DEBUG requests_cache.session Thread-15 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/varius/tickers
+2022-02-07 12:50:01,043 DEBUG requests_cache.backends Thread-15 : Initializing backend: Total rows: 19 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:01,044 DEBUG requests_cache.cache_control Thread-15 : Cache directives from request headers: {}
+2022-02-07 12:50:01,045 DEBUG urllib3.connectionpool Thread-15 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:50:01,139 DEBUG requests_cache.backends Thread-16 : Initializing backend: Total rows: 19 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:01,140 DEBUG requests_cache.cache_control Thread-16 : Cache directives from request headers: {}
+2022-02-07 12:50:01,147 DEBUG requests_cache.backends Thread-16 : Initializing backend: Total rows: 19 responses, 0 redirects coin_gecko_cache
+2022-02-07 12:50:01,148 DEBUG requests_cache.cache_control Thread-16 : Cache directives from request headers: {}
+2022-02-07 12:50:01,149 DEBUG urllib3.connectionpool Thread-16 : Starting new HTTPS connection (1): api.coingecko.com:443
+2022-02-07 12:50:01,281 DEBUG urllib3.connectionpool Thread-15 : https://api.coingecko.com:443 "GET /api/v3/coins/avaware/tickers HTTP/1.1" 200 None
+2022-02-07 12:50:01,282 DEBUG requests_cache.session Thread-15 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/avaware/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': False, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:01,286 INFO app Thread-15 : Inserting id = avaware
+2022-02-07 12:50:01,304 DEBUG urllib3.connectionpool Thread-16 : https://api.coingecko.com:443 "GET /api/v3/coins/sss-finance/tickers HTTP/1.1" 404 None
+2022-02-07 12:50:01,308 DEBUG requests_cache.session Thread-16 : Pre-cache checks for response from https://api.coingecko.com/api/v3/coins/sss-finance/tickers: {'disabled cache': False, 'disabled method': False, 'disabled status': True, 'disabled by filter': False, 'disabled by headers or expiration params': False}
+2022-02-07 12:50:01,309 DEBUG requests_cache.session Thread-16 : Skipping cache write for URL: https://api.coingecko.com/api/v3/coins/sss-finance/tickers
+2022-02-07 12:50:01,327 INFO app Thread-15 : Time used: 0.5906510353088379
+2022-02-07 12:50:01,330 INFO werkzeug Thread-15 : 172.21.0.1 - - [07/Feb/2022 12:50:01] "POST /coin_id_transform HTTP/1.1" 200 -
