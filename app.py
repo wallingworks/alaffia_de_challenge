@@ -35,7 +35,12 @@ logging.basicConfig(filename='etl.log', level=logging.DEBUG, format=f'%(asctime)
 
 # Use redis to provide a global task counter (i.e. task_run) and cache ids 
 # Only re-process id if hasn't been processed for 10 seconds
-redis = Redis(host='redis', port=6379)
+redis_cache = Redis(host='redis', port=6379, db=0)
+
+# Use redis to 'throttle' reponses
+redis_throttle = Redis(host='redis', port=6379, db=1)
+THROTTLE_MAX_CALLS=50
+THROTTLE_WINDOW_SECS=60
 
 def get_db():
     """Opens a new database connection if there is none yet for the
@@ -60,13 +65,22 @@ def after_request(response):
     app.logger.info((f"Time used: {time.time() - g.start_time}"))
     return response
 
+def throttle(task_run):
+    
+    while redis_throttle.dbsize() == THROTTLE_MAX_CALLS:
+        print('Waiting', flush=True)
+        time.sleep(1)
+    redis_throttle.set(task_run, task_run, ex=THROTTLE_WINDOW_SECS)
+
 #@on_exception(expo, RateLimitException, max_tries=8)
-@sleep_and_retry
-@limits(calls=50, period=60)
-def get_exchanges(id):
+#@sleep_and_retry
+#@limits(calls=50, period=60)
+def get_exchanges(id, task_run):
     """
     Call CoinGecko API endpoint and extract unique tickers[].market.identifier values
     """
+    throttle(task_run)
+    
     url = "https://api.coingecko.com/api/v3/coins/%s/tickers" % id
     r = requests.get(url)
     r.raise_for_status() # Ensure exception thrown on 400/500 responses
@@ -80,8 +94,8 @@ def get_exchanges(id):
 @app.route('/coin_id_transform', methods=['POST'])
 def coin_id_transform():
     
-    task_run = redis.incr('hits') # Use redis to keep track of a global request/task count
-    
+    task_run = redis_cache.incr('hits') # Use redis to keep track of a global request/task count
+    print(task_run, flush=True)
     if (request.content_type.startswith('application/json')):
         data = request.json
         ids = data['coins']    
@@ -95,18 +109,18 @@ def coin_id_transform():
     result = []
     exchanges = None
     for id in ids:
-        #print(id, flush=True)
+        print(id, flush=True)
         # Check if id has been requested from coin gecko in last 10 seconds
         # If it has, it should either be in the db (1) or was previously ignored (2)
-        redis_cache = redis.get(id)
+        redis_cache_val = redis_cache.get(id)
         #print("redis_cache = " + str(redis_cache), flush=True)
-        if redis_cache is None:
+        if redis_cache_val is None:
             try:
-                exchanges = get_exchanges(id) #Either returns dict, None or raises Exception to be caught here
-                redis.set(id, 1, ex=10) # Don't re-process for at least 10 seconds, data was found
+                exchanges = get_exchanges(id, task_run) #Either returns dict, None or raises Exception to be caught here
+                redis_cache.set(id, 1, ex=10) # Don't re-process for at least 10 seconds, data was found
             except requests.exceptions.HTTPError as e:
                 if e.response.status_code == 404:
-                    redis.set(id, 2, ex=10) # Don't re-process for at least 10 seconds
+                    redis_cache.set(id, 2, ex=10) # Don't re-process for at least 10 seconds
                     continue # Ignore coins not found in CoinGecko
                 else:
                     return(str(e), 424) # 424 = Failed Dependency
@@ -117,7 +131,7 @@ def coin_id_transform():
                 return('Unhandled exception', 500)
         
         # If previously ignored, ignore again
-        if redis_cache == b'2':
+        if redis_cache_val == b'2':
             #print("redis_cache == 2", flush=True)
             continue # Previously ignored coin
         else: 
@@ -125,7 +139,7 @@ def coin_id_transform():
             cursor = conn.cursor() #psycopg2 cursor
             cursor.execute("select id, exchanges, task_run from coins where id='%s'" % id)
             row = cursor.fetchone()
-            # If we have fresh 'exchanges' data from coin gecko, insert/update db, otherwise just return whats in db
+            # If we have fresh 'exchanges' data from coin gecko, check if need to insert/update db
             if exchanges:
                 # Check if entry exists
                 # Store sorted list as string for quick comparison
@@ -162,4 +176,4 @@ def format_text_array_db(value):
     return value.replace("[", "{").replace("]", "}")
     
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, threaded=True)
+    app.run(host="0.0.0.0", debug=True, threaded=False)
