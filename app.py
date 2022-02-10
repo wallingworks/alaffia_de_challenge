@@ -8,13 +8,13 @@ import os
 from os.path import exists
 import time
 from flask import Flask, request, g, jsonify
+from werkzeug.middleware.profiler import ProfilerMiddleware
 from redis import Redis
-import urllib, json
-from ratelimit import limits, RateLimitException
+import json
+from ratelimit import limits, RateLimitException, sleep_and_retry
 from backoff import on_exception, expo
 import logging
 import requests
-import requests_cache
 
 import sqlalchemy.pool as pool
 import psycopg2
@@ -27,14 +27,14 @@ mypool = pool.QueuePool(getconn, max_overflow=10, pool_size=25)
 
 app = Flask(__name__)
 app.secret_key = "dev"
+#app.config['PROFILE'] = True
+#app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[30])
 
 logging.basicConfig(filename='etl.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
 
-# Use request caching to avoid repeat calls to external API
-backend = requests_cache.RedisCache(host='redis', port=6379)
-requests_cache.install_cache('coin_gecko_cache', backend=backend, expire_after=180)
 
-# Use redis to provide a global task counter (i.e. task_run)
+# Use redis to provide a global task counter (i.e. task_run) and cache ids 
+# Only re-process id if hasn't been processed for 10 seconds
 redis = Redis(host='redis', port=6379)
 
 def get_db():
@@ -61,18 +61,21 @@ def after_request(response):
     return response
 
 #@on_exception(expo, RateLimitException, max_tries=8)
+@sleep_and_retry
 @limits(calls=50, period=60)
 def get_exchanges(id):
     """
     Call CoinGecko API endpoint and extract unique tickers[].market.identifier values
     """
     url = "https://api.coingecko.com/api/v3/coins/%s/tickers" % id
+    r = requests.get(url)
+    r.raise_for_status() # Ensure exception thrown on 400/500 responses
     data = requests.get(url).json()
-    # If pulling from Redis cache, requests.exceptions aren't thrown
-    # Manually check for cached error response
-    if 'error' in data.keys():
-        return None 
-    return(data)
+    
+    # Extract relevant information
+    exchanges = list(set([x['market']['identifier'] for x in data['tickers']]))
+    
+    return(exchanges)
       
 @app.route('/coin_id_transform', methods=['POST'])
 def coin_id_transform():
@@ -90,46 +93,73 @@ def coin_id_transform():
         return('Invalid Content-Type', 400)
     
     result = []
+    exchanges = None
     for id in ids:
-        try:
-            data = get_exchanges(id) #Either returns dict, None or raises Exception to be caught here
-            if data:
-                exchanges = list(set([x['market']['identifier'] for x in data['tickers']]))
-            else:
-                continue
-        except requests.exceptions.HTTPError as e:
-            if e.code == 404:
-                continue # Ignore coins not found
-            else:
-                return(str(e), 424) # 424 = Failed Dependency
-        except requests.exceptions.ConnectionError :
-            return('Cannot reach CoinGecko', 424) # 424 = Failed Dependency
-        except Exception as e:
-            app.logger.error("Unhandled exception" + str(e))
-            return('Unhandled exception', 500)
+        #print(id, flush=True)
+        # Check if id has been requested from coin gecko in last 10 seconds
+        # If it has, it should either be in the db (1) or was previously ignored (2)
+        redis_cache = redis.get(id)
+        #print("redis_cache = " + str(redis_cache), flush=True)
+        if redis_cache is None:
+            try:
+                exchanges = get_exchanges(id) #Either returns dict, None or raises Exception to be caught here
+                redis.set(id, 1, ex=10) # Don't re-process for at least 10 seconds, data was found
+            except requests.exceptions.HTTPError as e:
+                if e.response.status_code == 404:
+                    redis.set(id, 2, ex=10) # Don't re-process for at least 10 seconds
+                    continue # Ignore coins not found in CoinGecko
+                else:
+                    return(str(e), 424) # 424 = Failed Dependency
+            except requests.exceptions.ConnectionError :
+                return('Cannot reach CoinGecko', 424) # 424 = Failed Dependency
+            except requests.exceptions.RequestException as e:
+                app.logger.error("Unhandled exception" + str(e))
+                return('Unhandled exception', 500)
         
-        # Check if entry exists
-        row =  get_db().cursor().execute("select id, exchanges from coins where id='%s'" % id)
-        # Store sorted list as string for quick comparison
-        exchanges.sort()
-        str_exchanges = json.dumps(exchanges).replace("[", "{").replace("]", "}") # Format for postgres text column insert
-        #row = row.first()
-        if not row:
-            app.logger.info("Inserting id = " + id)
-            get_db().cursor().execute("insert into coins (id, exchanges, task_run) values ('%s', '%s', %s)" % (id, str_exchanges, task_run))
-            get_db().commit()
-            result.append({"id": id, "exchanges": exchanges, "task_run": task_run})
-        else:
-            # If the exchanges in db doesn't match, update it
-            db_exchanges = row[1]
-            if not set(db_exchanges)==set(exchanges):
-                app.logger.info('Updating id = ' + id)
-                get_db().cursor().execute("update coins set exchanges='%s' where id = '%s'" % (str_exchanges, id))
-                get_db().commit()
-            result.append({"id": id, "exchanges": exchanges, "task_run": row[2]})
+        # If previously ignored, ignore again
+        if redis_cache == b'2':
+            #print("redis_cache == 2", flush=True)
+            continue # Previously ignored coin
+        else: 
+            conn = get_db()
+            cursor = conn.cursor() #psycopg2 cursor
+            cursor.execute("select id, exchanges, task_run from coins where id='%s'" % id)
+            row = cursor.fetchone()
+            # If we have fresh 'exchanges' data from coin gecko, insert/update db, otherwise just return whats in db
+            if exchanges:
+                # Check if entry exists
+                # Store sorted list as string for quick comparison
+                exchanges.sort()
+                str_exchanges = format_text_array_db(json.dumps(exchanges))
+                if not row:
+                    print("Inserting id = " + id, flush=True)
+                    app.logger.info("Inserting id = " + id)
+                    cursor.execute("insert into coins (id, exchanges, task_run) values ('%s', '%s', %s)" % (id, str_exchanges, task_run))
+                    conn.commit()
+                    result.append({"id": id, "exchanges": exchanges, "task_run": task_run})
+                else:
+                    # If the exchanges in db doesn't match, update it
+                    db_exchanges = row[1]
+                    if not db_exchanges==str_exchanges:
+                        print("Updating id = " + id, flush=True)
+                        app.logger.info('Updating id = ' + id)
+                        cursor.execute("update coins set exchanges='%s' where id = '%s'" % (str_exchanges, id))
+                        conn.commit()
+                    result.append({"id": id, "exchanges": exchanges, "task_run": row[2]})
+            # Otherwise, just return information from db
+            elif row:
+                json_exchanges = json.loads(format_text_array_json(row[1]))
+                result.append({"id": id, "exchanges": json_exchanges, "task_run": row[2]})
             
     return(json.dumps(result), 200)
 
+def format_text_array_json(value):
+    # Format from postgres -> json.dumps
+    return value.replace("{", "[").replace("}", "]")
+    
+def format_text_array_db(value):
+    # Format from json.dumps -> postgres
+    return value.replace("[", "{").replace("]", "}")
+    
 if __name__ == "__main__":
-
     app.run(host="0.0.0.0", debug=True, threaded=True)
