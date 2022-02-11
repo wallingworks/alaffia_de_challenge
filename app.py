@@ -27,7 +27,7 @@ mypool = pool.QueuePool(getconn, max_overflow=10, pool_size=25)
 
 app = Flask(__name__)
 app.secret_key = "dev"
-#app.config['PROFILE'] = True
+#app.config['PROFILE'] = False
 #app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[30])
 
 logging.basicConfig(filename='etl.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
@@ -66,7 +66,9 @@ def after_request(response):
     return response
 
 def throttle(task_run):
-    
+    """
+    Redis backed method for throttling
+    """
     while redis_throttle.dbsize() == THROTTLE_MAX_CALLS:
         print('Waiting', flush=True)
         time.sleep(1)
@@ -95,17 +97,17 @@ def get_exchanges(id, task_run):
 def coin_id_transform():
     
     task_run = redis_cache.incr('hits') # Use redis to keep track of a global request/task count
-    print(task_run, flush=True)
+    #print(task_run, flush=True)
     if (request.content_type.startswith('application/json')):
         data = request.json
         ids = data['coins']    
     elif (request.content_type.startswith('text/csv')):
         data = request.data
-        ids = data.decode().split('\n')[1:] # Skip header
-        ids = [i for i in ids if i] # Remove any blank lines
+        ids = data.decode().split('\n')[1:] # Skip header 
     else:
         return('Invalid Content-Type', 400)
-    
+
+    ids = [i for i in ids if i] # Remove any blank ids
     result = []
     exchanges = None
     for id in ids:
@@ -113,7 +115,6 @@ def coin_id_transform():
         # Check if id has been requested from coin gecko in last 10 seconds
         # If it has, it should either be in the db (1) or was previously ignored (2)
         redis_cache_val = redis_cache.get(id)
-        #print("redis_cache = " + str(redis_cache), flush=True)
         if redis_cache_val is None:
             try:
                 exchanges = get_exchanges(id, task_run) #Either returns dict, None or raises Exception to be caught here
@@ -132,8 +133,7 @@ def coin_id_transform():
         
         # If previously ignored, ignore again
         if redis_cache_val == b'2':
-            #print("redis_cache == 2", flush=True)
-            continue # Previously ignored coin
+            continue
         else: 
             conn = get_db()
             cursor = conn.cursor() #psycopg2 cursor
